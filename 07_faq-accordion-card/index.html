@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="card">
+    <div class="header-img-container">
+      <img
+        srcset="./images/illustration-woman-online-mobile.svg 1000w, ./images/illustration-woman-online-desktop.svg 1200w"
+        alt=""
+      >
+    </div>
+    <img class="box" src="./images/illustration-box-desktop.svg" alt="">
+    <div class="questions">
+      <h1>FAQ</h1>
+      <div class="container">
+        <button class="collapsible">
+          <div class="question">How many team members can I invite?</div>
+          <img src="./images/icon-arrow-down.svg" alt="">
+        </button>
+        <div class="answer">
+          <p>You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.</p>
+        </div>
+      </div>
+      <div class="container">
+        <button class="collapsible">
+          <div class="question">What is the maximum file upload size?</div>
+          <img src="./images/icon-arrow-down.svg" alt="">
+        </button>
+        <div class="answer">
+          <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>
+        </div>
+      </div>
+      <div class="container">
+        <button class="collapsible">
+          <div class="question">How do I reset my password?</div>
+          <img src="./images/icon-arrow-down.svg" alt="">
+        </button>
+        <div class="answer">
+          <p>Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.</p>
+        </div>
+      </div>
+      <div class="container">
+        <button class="collapsible">
+          <div class="question">Can I cancel my subscription?</div>
+          <img src="./images/icon-arrow-down.svg" alt="">
+        </button>
+        <div class="answer">
+          <p>Yes! Send us a message and we'll process your request no questions asked.</p>
+        </div>
+      </div>
+      <div class="container">
+        <button class="collapsible">
+          <div class="question">Do you provide additional support?</div>
+          <img src="./images/icon-arrow-down.svg" alt="">
+        </button>
+        <div class="answer">
+          <p>Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://abdul-rehman-d.github.io/">Abdul Rehman Daniyal</a>.
+  </div>
+
+  <script>
+    const questions = document.getElementsByClassName("collapsible")
+
+    for (let i = 0; i < questions.length; i++) {
+        questions[i].addEventListener('click', () => {
+            questions[i].parentElement.classList.toggle("open")
+        })
+    }
+  </script>
+</body>
+</html>

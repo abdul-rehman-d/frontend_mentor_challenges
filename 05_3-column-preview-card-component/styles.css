@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+:root {
+    --sedan: hsl(31, 77%, 52%);
+    --suv: hsl(184, 100%, 22%);
+    --luxury: hsl(179, 100%, 13%);
+
+    --white: hsla(0, 0%, 100%, 0.75);
+    --gray: hsl(0, 0%, 95%);
+
+    --ff-heading: 'Big Shoulders Display', cursive;
+    --ff-primary: 'Lexend Deca', sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+/* COLORS AND TYPOGRAPHY */
+body {
+    background-color: var(--gray);
+    font-family: var(--ff-primary);
+}
+
+p {
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--white);
+    line-height: 1.5;
+}
+h1, h2, h3 {
+    color: var(--gray);
+    font-family: var(--ff-heading);
+    font-weight: 700;
+    font-size: 36px;
+}
+
+button {
+    padding: 0.8rem 2rem ;
+    background-color: var(--gray);
+    border-radius: 3rem;
+    border: none;
+    font-family: var(--ff-primary);
+}
+
+.card.sedan {
+    background-color: var(--sedan);
+}
+.card.sedan button {
+    color: var(--sedan);
+}
+.card.suv {
+    background-color: var(--suv);
+}
+.card.suv button {
+    color: var(--suv);
+}
+.card.luxury {
+    background-color: var(--luxury);
+}
+.card.luxury button {
+    color: var(--luxury);
+}
+
+/* MOBILE FIRST STYLING */
+
+.card-container {
+    margin: 2rem auto;
+    border-radius: 0.5em;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 400px;
+}
+
+.card {
+    padding: 3rem;
+    padding-right: 4rem;
+}
+
+.card > * + * {
+    margin-top: 2rem;
+}
+
+/* DESKTOP */
+@media (min-width: 1000px) {
+    .card-container {
+        flex-direction: row;
+        max-width: 1000px;
+    }
+    .card button {
+        margin-top: 4rem;
+    }
+}
+
+/* ACTIVE STATES */
+.card button:hover {
+    background-color: transparent;
+    color: var(--gray);
+    border: 1px solid var(--gray);
+    cursor: pointer;
+}
+
+/* footer */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}

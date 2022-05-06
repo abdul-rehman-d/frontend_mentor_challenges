@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+:root {
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --desaturated-dark-blue: hsl(214, 17%, 51%);
+    --grayish-blue: hsl(212, 23%, 69%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  padding: 0;
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+}
+
+body {
+    background-color: var(--light-grayish-blue);
+    color: var(--desaturated-dark-blue);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.card {
+    max-width: 350px;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: hsl(0, 0%, 100%);
+}
+.card > img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 210px;
+}
+.card .body {
+    padding: 2rem;
+    padding-bottom: 1rem;
+    position: relative;
+}
+.card .content {
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    padding-right: 0.5rem;
+}
+.card .content > h2 {
+    font-size: 1.6em;
+    color: var(--very-dark-grayish-blue);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+.card .content > p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.author {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: space-between;
+}
+.author > img:nth-of-type(1) {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+.author .author-info {
+    width: 100%;
+    line-height: 1.6;
+}
+.author .author-info p:nth-of-type(1) {
+    font-weight: 700;
+    color: var(--very-dark-grayish-blue);
+}
+.author .author-info p:nth-of-type(2) {
+    color: var(--grayish-blue);
+}
+.author #share-btn {
+    border-radius: 50%;
+    background-color: var(--light-grayish-blue);
+    object-fit: fill;
+    height: max-content;
+    padding: 10px;
+    flex-shrink: 0;
+    align-self: center;
+    z-index: 5;
+}
+.author #share-btn:hover, #share-btn.open {
+    cursor: pointer;
+    background-color: var(--grayish-blue);
+    filter: invert(0) sepia(0) saturate(1) hue-rotate(0deg) brightness(1);
+}
+.author #share-btn > .share-icon {
+    fill: hsl(0, 0%, 100%);
+}
+.share-menu {
+    display: none;
+}
+.share-menu.open {
+    background-color: var(--very-dark-grayish-blue);
+    color: hsl(0, 0, 100);
+    padding: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.share-menu.open p {
+    color: hsl(0, 0, 100);
+    letter-spacing: .2rem;
+}
+.share-menu.open .icons > img {
+    margin-right: 1rem;
+    transition: all 100ms ease;
+}
+.share-menu.open .icons > img:hover {
+    cursor: pointer;
+    scale: 1.1;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media (min-width: 840px) {
+    .card {
+        flex-direction: row;
+        max-width: 800px;
+    }
+    .card > img {
+        max-height: max-content;
+    }
+
+    .card .body {
+        position: static;
+    }
+
+    .share-menu.open {
+        border-radius: 10px;
+        width: max-content;
+        top: 15rem;
+        bottom: auto;
+        left: 67%;
+        padding: 1rem;
+        align-items: center;
+    }
+    .triangle{
+        width: 20px;
+        height: 20px;
+        background-color: var(--very-dark-grayish-blue);
+        position: fixed;
+        transform: rotateY(0) rotate(45deg);
+    }
+    .share-menu.open .icons {
+        margin-left: 1rem;
+    }
+}

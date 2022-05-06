@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --violet: hsl(257, 40%, 49%);
+    --soft-magenta: hsl(300, 69%, 71%);
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* BASE */
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: url(./images/bg-mobile.svg) hsl(280, 100%, 35%);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+}
+/* MAIN */
+/* HEADER */
+header {
+    padding: 2rem;
+    padding-bottom: 1.5rem;
+}
+header .logo {
+    width: 45%;
+    max-width: 220px;
+}
+
+/* MAIN CONTENT */
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    color: #fff;
+    padding: 2rem;
+}
+.illustration {
+    align-self: center;
+    width: 95%;
+}
+.illustration img {
+    width: 100%;
+}
+section .content {
+    text-align: center;
+    display: grid;
+    gap: 1.5em;
+    padding: 0 1.1em;
+}
+.content p {
+    font-size: 0.9em;
+}
+button {
+    width: max-content;
+    justify-self: center;
+    font-size: 0.8em;
+    padding: 0.8em 4.5rem;
+    border-radius: 3em;
+    color: hsl(280, 100%, 35%);
+    border: none;
+    font-family: inherit;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+button:hover {
+    background-color: hsl(305, 94%, 58%);
+    color: #fff;
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+footer .social-icons-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: max-content;
+    gap: 0.5em;
+    margin: 0 auto;
+}
+footer .social-icons-container i {
+    border-radius: 50%;
+    color: #fff;
+    border: 1px solid currentColor;
+    padding: 5px;
+    cursor: pointer;
+    text-align: center;
+    aspect-ratio: 1;
+}
+footer .social-icons-container i:hover {
+    color: hsl(315, 100%, 50%);
+
+}
+.attribution {
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+}
+.attribution a {
+    color: hsl(305, 94%, 58%);
+}
+
+@media (min-width: 840px) {
+    body {
+        background: url(./images/bg-desktop.svg) hsl(280, 100%, 35%);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    header {
+        padding: 2rem 4rem 0;
+    }
+
+    section {
+        flex-direction: row;
+        padding: 2rem 4rem;
+    }
+    section .content {
+        padding: 2rem;
+        width: 80%;
+        height: max-content;
+        text-align: left;
+    }
+    .content h2 {
+        font-size: 2.5em;
+    }
+    .content p {
+        font-size: 1em;
+    }
+    .content button {
+        justify-self: left;
+    }
+
+    footer {
+        width: 100%;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    footer .social-icons-container {
+        margin: 0;
+    }
+    footer .social-icons-container i {
+        padding: 10px;
+    }
+}

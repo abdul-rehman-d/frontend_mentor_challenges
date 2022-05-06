@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+:root {
+    /* Primary */
+    --blue: hsl(223, 87%, 63%);
+
+    /* Secondary */
+    --pale-blue: hsl(223, 100%, 88%);
+    --light-red: hsl(354, 100%, 66%);
+
+    /* Neutral */
+    --gray: hsl(0, 0%, 59%);
+    --very-dark-blue: hsl(209, 33%, 12%);
+}
+
+/* prevent default */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* base */
+body {
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+h2 {
+    font-weight: 300;
+}
+p {
+    font-size: 0.8em;
+}
+
+/* utility */
+.bold-text {
+    font-weight: 700;
+    color: var(--very-dark-blue);
+}
+.bullet-shape {
+    padding: 1em 3em;
+    border-radius: 3em;
+    border: 1px solid var(--pale-blue);
+    width: 100%;
+}
+
+/* main */
+main {
+    display: grid;
+    gap: 4rem;
+    margin: 5rem auto;
+    width: 90%;
+    max-width: 700px;
+}
+
+header {
+    text-align: center;
+}
+header .logo {
+    width: 20%;
+    max-width: max-content;
+}
+header h2 {
+    margin-top: 2rem;
+    color: var(--gray);
+}
+header p {
+    margin-block: 1rem;
+    color: var(--very-dark-blue);
+}
+
+header form {
+    display: grid;
+    gap: 0.5em;
+    padding: 1em;
+    position: relative;
+}
+
+header form input {
+    color: var(--very-dark-blue);
+}
+header form input::placeholder {
+    color: var(--gray);
+}
+header form input:focus {
+    border: 1px solid var(--blue);
+    outline: none;
+}
+header form p.error-message {
+    color: var(--light-red);
+    font-size: 0.6em;
+    margin-top: 5px;
+    display: none;
+}
+
+header form.error p.error-message {
+    display: block;
+}
+header form.error input {
+    border: 1px solid var(--light-red);
+}
+
+header form button.bullet-shape {
+    background-color: hsl(223, 87%, 43%);
+    color: #fff;
+    font-family: inherit;
+    font-weight: 600;
+    box-shadow: 0 0.5em 0.5em 0 hsla(223, 100%, 88%, 0.5);
+    cursor: pointer;
+    border: none;
+}
+header form button.bullet-shape:hover {
+    background-color: hsl(223, 87%, 63%);
+}
+
+.hero-img img {
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+}
+footer .social-icons-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: max-content;
+    gap: 0.8rem;
+    margin: 3rem auto 1rem;
+}
+footer i {
+    border-radius: 50%;
+    color: var(--blue);
+    border: 1px solid var(--pale-blue);
+    padding: 10px;
+    cursor: pointer;
+}
+footer i:hover {
+    color: var(--pale-blue);
+    background-color: var(--blue);
+}
+footer p {
+    color: var(--gray);
+    font-size: 0.7em;
+}
+
+.attribution {
+    color: #000;
+    font-size: 12px;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 700px) {
+    header h2 {
+        font-size: 2.5em;
+    }
+    header form {
+        grid-template-columns: 3fr 1fr;
+    }
+    header form p.error-message {
+        position: absolute;
+        left: 2.4em;
+        bottom: -1.2em;
+    }
+}

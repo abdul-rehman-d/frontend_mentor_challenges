@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+:root {
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  padding: 0;
+  margin: 0;
+  font-family: 'League Spartan', sans-serif;
+}
+
+body {
+    background-image: url(./images/bg-pattern-top-mobile.svg), url(./images/bg-pattern-bottom-mobile.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-size: contain, contain;
+    background-position: top, bottom;
+    font-size: 18px;
+}
+
+main {
+    padding: 5rem 1.5rem;
+}
+
+main > * {
+    max-width: 400px;
+}
+
+section {
+    margin: 3rem auto;
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    margin: 0 auto;
+}
+header h1 {
+    color: var(--very-dark-magenta);
+    font-weight: 700;
+    font-size: 2.5em;
+}
+header p {
+    color: var(--dark-grayish-magenta);
+    margin: 2rem auto;
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+.reviews, .testimonials {
+    display: grid;
+    gap: 1rem;
+}
+.review {
+    padding: 1rem;
+    background-color: var(--light-grayish-magenta);
+    border-radius: 10px;
+    text-align: center;
+    color: var(--very-dark-magenta);
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.review .stars {
+    height: 18px;
+    width: 101px;
+    background-image: url(./images/icon-star.svg);
+    background-repeat: space;
+    margin-bottom: 0.5rem;
+}
+
+.card {
+    background-color: var(--very-dark-magenta);
+    color: var(--light-grayish-magenta);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 2.5rem 2rem;
+    line-height: 1.2;
+    font-size: 16px;
+}
+
+.card .person-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.card .person-info img {
+    width: 4ch;
+    border-radius: 50%;
+}
+.card .person-info div {
+    margin-left: 1.5rem;
+    line-height: 1.2;
+}
+.card .person-info .person-name {
+    font-weight: 500;
+}
+.card .person-info p:nth-last-of-type(1) {
+    color: var(--soft-pink);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 1000px) {
+    body {
+        background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: top left, bottom right;
+        background-size: 45%, 80%;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    header {
+        text-align: left;
+    }
+
+    .review {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        padding-right: 2rem;
+        width: 25rem;
+    }
+    .review:nth-of-type(1) {
+        margin-left: -6rem;
+    }
+    .review:nth-of-type(2) {
+        margin-left: -3rem;
+    }
+    .review .stars {
+        margin-bottom: 0;
+    }
+
+    .testimonials {
+        max-width: 100%;
+        gap: 3rem;
+        padding: 0 3rem;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column: span 2 / auto;
+    }
+    .card {
+        height: max-content;
+    }
+    .testimonials .card:nth-of-type(2) {
+        margin-top: 1rem;
+    }
+    .testimonials .card:nth-of-type(3) {
+        margin-top: 2rem;
+    }
+}

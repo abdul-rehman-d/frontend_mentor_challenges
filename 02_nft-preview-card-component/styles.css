@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    --cyan: hsl(178, 100%, 50%);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: hsl(217, 54%, 11%);
+    font-family: 'Outfit', sans-serif;
+}
+
+p {
+    font-size: 18px;
+    color: hsl(215, 51%, 70%);
+    font-weight: 300;
+}
+
+ul {
+    list-style: none;
+}
+
+.card {
+    max-width: 375px;
+    padding: 20px;
+    background: hsl(216, 50%, 16%);
+    border-radius: 20px;
+    box-shadow: 0 10px 50px -20px rgba(0, 0, 0, 0.5);
+    margin: 1rem auto;
+}
+
+.card > * {
+    padding: 0.75rem 0;
+}
+
+.card-img-container {
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+}
+
+.card-img-container .card-image {
+    border-radius: 10px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-img-container .view-icon {
+    background-color: rgba(0, 255, 247, 0.5);
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    object-fit: scale-down;
+    border-radius: 10px;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+}
+
+.card h1 {
+    font-weight: 600;
+    color: hsl(0, 0%, 100%);
+    font-size: 20px;
+}
+
+.card ul {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: space-between;
+    color: hsl(215, 51%, 70%);
+    border-bottom: 1px solid hsl(215, 32%, 27%);
+    padding-bottom: 1.5rem;
+}
+
+.card li {
+    display: flex;
+    align-items: center;
+}
+
+.card li > img {
+    margin-right: 0.25rem;
+}
+
+.price {
+    color: var(--cyan);
+    font-weight: 600;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    color: hsl(215, 51%, 70%);
+    font-weight: 300;
+}
+
+.author-info img {
+    width: 3rem;
+    border-radius: 50%;
+    border: 1.5px solid hsl(0, 0%, 100%);
+    display: inline;
+    margin-right: .75rem;
+}
+
+.author-info .author-name {
+    color: hsl(0, 0%, 100%);
+    font-weight: 400;
+    margin-left: 3.5px;
+}
+
+.card h1:hover,
+.author-name:hover {
+    cursor: pointer;
+    color: var(--cyan);
+}
+
+.card-img-container:hover > .view-icon {
+    cursor: pointer;
+    opacity: 1;
+}

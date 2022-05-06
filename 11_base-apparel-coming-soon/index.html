@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="./images/logo.svg" alt="logo">
+  </header>
+  <main>
+    <div class="header-img">
+    </div>
+    <section class="hero">
+      <h1><span>We're</span><br>coming<br>soon</h1>
+      <p>Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
+      
+      <form action="#">
+        <input type="text" placeholder="Email Address">
+        <img class="error-icon" src="./images/icon-error.svg" alt="">
+        <button type="submit">
+          <img src="./images/icon-arrow.svg" alt="submit">
+        </button>
+        <p class="error-text">Please provide a valid email</p>
+      </form>
+
+    </section>
+  </main>
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://abdul-rehman-d.github.io/">Abdul Rehman Daniyal</a>.
+    </p>
+  </footer>
+
+  <script>
+    const form = document.querySelector('.hero form')
+    const emailField = document.querySelector('.hero form input')
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault()
+      form.classList.remove('error')
+      if (!validateEmail(emailField.value)) {
+        form.classList.add('error')
+      }
+    })
+
+    const validateEmail = (email) => {
+      return String(email)
+        .toLowerCase()
+        .match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
+    }
+  </script>
+</body>
+</html>

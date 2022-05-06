@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+    --dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+    --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(
+        hsl(273, 75%, 66%),
+        hsl(240, 73%, 65%)
+    );
+    font-size: 12px;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.card {
+    border-radius: 2rem;
+    background: white url(./images/bg-pattern-mobile.svg) no-repeat;
+    background-position-x: center;
+    width: 350px;
+    padding: 2rem;
+    padding-bottom: 3rem;
+    margin: 10rem auto;
+    box-shadow: 0 40px 40px -10px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+}
+
+.card .header-img-container {
+    margin-top: -10rem;
+    margin-bottom: 2rem;
+}
+.card .header-img-container img {
+    scale: 0.8;
+}
+.card .box {
+    display: none;
+}
+
+.card .questions h1 {
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--dark-desaturated-blue);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.container {
+    padding-bottom: 1rem;
+    width: 100%;
+    border-bottom: 1px solid var(--light-grayish-blue);
+}
+
+.container .collapsible {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    color: var(--very-dark-grayish-blue);
+    font-family: 'Kumbh Sans', sans-serif;
+    margin-top: 1rem;
+    padding: 0;
+}
+.container .collapsible img {
+    object-fit: contain;
+    align-self: center;
+    transition: all 200ms ease;
+}
+.container .collapsible:hover {
+    cursor: pointer;
+    color: var(--soft-red);
+}
+.container.open .collapsible {
+    color: var(--dark-desaturated-blue);
+    font-weight: 700;
+}
+.container.open .collapsible img {
+    transform: rotate(180deg);
+}
+.container .answer {
+    display: none;
+    padding-top: 0.8rem;
+    color: var(--dark-grayish-blue);
+}
+.container.open .answer {
+    display: block;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 1000px) {
+    .card {
+        width: 1000px;
+        flex-direction: row;
+        background: white;
+        padding: 0;
+        overflow: hidden;
+    }
+    .card > * {
+        width: 100%;
+    }
+    .card .header-img-container {
+        background: url(./images/bg-pattern-desktop.svg) no-repeat;
+        background-position-y: center;
+        background-position-x: -5rem;
+        background-size: 105%;
+        margin: 0;
+        margin-left: -8rem;
+        position: relative;
+    }
+    .card .header-img-container img {
+        width: 100%;
+    }
+    .card .box {
+        position: absolute;
+        display: block;
+        width: max-content;
+        left: 83px;
+        top: 46%;
+        object-fit: scale-down;
+
+    }
+    .card .questions {
+        padding: 3rem 5rem;
+    }
+    .card .questions h1 {
+        text-align: left;
+        justify-self: flex-start;
+    }
+    .card .container {
+        width: 90%;
+    }
+}

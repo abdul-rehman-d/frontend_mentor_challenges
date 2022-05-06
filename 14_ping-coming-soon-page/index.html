@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Ping coming soon page</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- FONT AWESOME -->
+  <script src="https://kit.fontawesome.com/35b16fa9ce.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <img src="./images/logo.svg" alt="PING logo" class="logo">
+      <h2>We are launching <span class="bold-text">soon!</span></h2>
+      <p>Subscribe and get notified</p>
+      <form action="#">
+        <div>
+          <input class="bullet-shape" type="text" placeholder="Your email address..">
+          <p class="error-message">Please provide a valid email address</p>
+        </div>
+        <button type="submit" class="bullet-shape">Notify Me</button>
+      </form>
+    </header>
+    <div class="hero-img">
+      <img src="./images/illustration-dashboard.png" alt="Dashboard of Ping illustration">
+    </div>
+    <footer>
+      <div class="social-icons-container">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+      </div>
+      <p>&copy; Copyright Ping. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://abdul-rehman-d.github.io/">Abdul Rehman Daniyal</a>.
+    </p>
+  </footer>
+
+  <script>
+    const form = document.querySelector("main header form")
+
+    form.addEventListener("submit", e => {
+      e.preventDefault()
+      if (!validateEmail(document.querySelector("main header form input").value)) {
+        form.classList.add("error")
+      }
+      else if (form.classList.contains("error")) {
+        form.classList.remove("error")
+      }
+    })
+
+    const validateEmail = (email) => {
+      return String(email)
+        .toLowerCase()
+        .match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
+    }
+  </script>
+</body>
+</html>

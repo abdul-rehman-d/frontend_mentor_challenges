@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Abdul Rehman</title>
+
+    <style>
+        h3 { text-align: center; }
+        .main-grid {
+            padding: 2rem;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1em;
+        }
+        .main-grid > * {
+            min-width: 300px;
+            max-width: 400px;
+            overflow: hidden;
+            border-radius: 2em;
+            box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
+        }
+        .main-grid > *:hover img {
+            scale: 1.02;
+        }
+        .main-grid > *:nth-child(n + 1) {
+            margin-top: 2em;
+        }
+        .main-grid img {
+            width: 100%;
+            transition: all 300ms ease;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h3>Projects</h3>
+        <div id="projects-container" class="main-grid">
+            
+        </div>
+        
+    </main>
+
+    <template id="project-card-template">
+        <div>
+            <a class="project-link" href="">
+                <img class="project-img" src="" alt="">
+            </a>
+            <h3 class="project-title"></h3>
+        </div>
+    </template>
+
+    <script>
+        const projects = [
+            {'name': 'Qr Code Component', 'folderName': '01_qr-code-component'},
+            {'name': 'Nft Preview Card Component', 'folderName': '02_nft-preview-card-component'},
+            {'name': 'Order Summary Component', 'folderName': '03_order-summary-component'},
+            {'name': 'Stats Preview Card Component', 'folderName': '04_stats-preview-card-component'},
+            {'name': '3 Column Preview Card Component', 'folderName': '05_3-column-preview-card-component'},
+            {'name': 'Interactive Rating Component', 'folderName': '06_interactive-rating-component'},
+            {'name': 'Faq Accordion Card', 'folderName': '07_faq-accordion-card'},
+            {'name': 'Social Proof Section', 'folderName': '08_social-proof-section'},
+            {'name': 'Article Preview Component', 'folderName': '09_article-preview-component'},
+            {'name': 'Four Card Feature Section', 'folderName': '10_four-card-feature-section'},
+            {'name': 'Base Apparel Coming Soon', 'folderName': '11_base-apparel-coming-soon'},
+            {'name': 'Intro Component With Signup Form', 'folderName': '12_intro-component-with-signup-form'},
+            {'name': 'Single Price Grid Component', 'folderName': '13_single-price-grid-component'},
+            {'name': 'Ping Coming Soon Page', 'folderName': '14_ping-coming-soon-page'},
+            {'name': 'Huddle Landing Page With Single Introductory Section', 'folderName': '15_huddle-landing-page-with-single-introductory-section'}
+        ]
+
+        const projectsDiv = document.getElementById('projects-container')
+        const template = document.getElementById('project-card-template')
+        
+        projects.reverse().forEach(project => {
+            const item = template.content.cloneNode(true)
+
+            item.querySelector('.project-title').innerText = project['name']
+            item.querySelector('.project-link').setAttribute('href', `./${project.folderName}/index.html`)
+            const projectNum = project.folderName.slice(0, 2)
+            item.querySelector('.project-img').setAttribute('src', `./assets/${projectNum}.png`)
+
+            projectsDiv.append(item)
+        })
+
+    </script>
+</body>
+</html>
