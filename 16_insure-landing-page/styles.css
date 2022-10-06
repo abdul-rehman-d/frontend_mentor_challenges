@@ -1,0 +1,43 @@
+/* reset */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+img {
+	max-width: 100%;
+}
+button, input, textarea {
+	font-family: inherit;
+}
+
+/************************/
+/* 		UTILITIES					*/
+/************************/
+.d-flex { display: flex; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.align-center { align-items: center; }
+
+
+/************************/
+/* 		MAIN DESIGN				*/
+/************************/
+
+/* NAVBAR */
+/* mobile toggle logics */
+.nav-container .close-btn,
+.nav-container nav {
+	display: none;
+}
+.nav-container.open .close-btn {
+	display: block;
+}
+.nav-container.open nav {
+	display: flex;
+}
+.nav-container.open .open-btn {
+	display: none;
+}
