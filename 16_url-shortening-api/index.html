@@ -28,15 +28,24 @@
       @apply rounded-full w-20 h-20 bg-primary-voilet p-4 mx-auto mt-[-5rem] mb-4 flex justify-center items-center;
     }
 
-    .shorten-box {
-      background-image: url(./images/bg-shorten-mobile.svg);
+    .primary-background {
       background-repeat: no-repeat;
       background-size: cover;
       @apply bg-primary-voilet;
     }
+
+    .shorten-box {
+      background-image: url(./images/bg-shorten-mobile.svg);
+    }
+    .boost-box {
+      background-image: url(./images/bg-boost-mobile.svg);
+    }
     @media (min-width: 640px) {
       .shorten-box {
         background-image: url(./images/bg-shorten-desktop.svg);
+      }
+      .boost-box {
+        background-image: url(./images/bg-boost-desktop.svg);
       }
     }
   </style>
@@ -76,7 +85,7 @@
         <img src="./images/illustration-working.svg" alt="Illustration of a woman working at a computer">
       </div>
     </section>
-    <div class="shorten-box p-8 mx-6 lg:mx-24 rounded-lg my-8 relative z-10">
+    <div class="shorten-box primary-background p-8 mx-6 lg:mx-24 rounded-lg my-8 relative z-10">
       <div class="flex flex-col md:flex-row md:gap-8 gap-4">
         <input
           class="rounded-lg p-4 md:flex-grow"
@@ -90,7 +99,7 @@
     </div>
     <section class="px-6 lg:px-24 pt-40 mt-[-8rem] lg:mt-[-6rem] bg-[#F0F1F6]">
       <div class="text-center max-w-xl mx-auto">
-        <h2 class="text-4xl text-primary-voilet font-bold mb-4">Advanced Statistics</h2>
+        <h2 class="text-2xl lg:text-4xl text-primary-voilet font-bold mb-4">Advanced Statistics</h2>
         <p>Track how your links are performing across the web with our advanced statistics dashboard.</p>
       </div>
       <div class="flex flex-col lg:flex-row justify-between gap-32 lg:gap-8 py-16">
@@ -117,34 +126,60 @@
         </div>
       </div>
     </section>
+    <section class="boost-box primary-background px-6 lg:px-24 text-center py-16 lg:py-12">
+      <h2 class="text-2xl lg:text-4xl text-white font-bold mb-8">Boost your links today</h2>
+      <button class="primary-button rounded-full">Get Started</button>
+    </section>
   </main>
-
-  Boost your links today
-
-  Get Started
-
-  Features
-
-  Link Shortening
-  Branded Links
-  Analytics
-
-  Resources
-
-  Blog
-  Developers
-  Support
-
-  Company
-
-  About
-  Our Team
-  Careers
-  Contact
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <footer class="px-6 lg:px-24 py-12 bg-nuetral-dark-voilet text-white text-center lg:text-left lg:flex flex-row justify-between">
+    <div class="logo-container w-fit mx-auto lg:mx-0 mb-8">
+      <img class="fill-white" src="./images/logo.svg" alt="Shortly">
+    </div>
+    <nav class="flex flex-col lg:flex-row gap-8 lg:gap-16">
+      <div>
+        <p class="my-6 lg:mt-0">Features</p>
+        <ul class="text-nuetral-grayish-voilet flex flex-col gap-2">
+          <li><a href="#">Link Shortening</a></li>
+          <li><a href="#">Branded Links</a></li>
+          <li><a href="#">Analytics</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="my-6 lg:mt-0">Resources</p>
+        <ul class="text-nuetral-grayish-voilet flex flex-col gap-2">
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Developers</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="my-6 lg:mt-0">Company</p>
+        <ul class="text-nuetral-grayish-voilet flex flex-col gap-2">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Our Team</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="flex flex-row w-max mx-auto lg:mx-0 text-3xl justify-between gap-8 mb-8">
+        <a href="#">
+          <i class="fa-brands fa-square-facebook"></i>
+        </a>
+        <a href="#">
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a href="#">
+          <i class="fa-brands fa-pinterest"></i>
+        </a>
+        <a href="#">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+    </nav>
+  </footer>
+  <div class="px-6 lg:px-24 py-4 text-sm bg-nuetral-dark-voilet text-nuetral-grayish-voilet text-center">
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="text-white">Frontend Mentor</a>.</p>
+    <p>Coded with <span class="text-secondary-red">&hearts;</span> by <a href="https://abdul-rehman-d.github.io/" class="text-white">Abdul Rehman Daniyal</a>.</p>
   </div>
   <script>
     tailwind.config = {
