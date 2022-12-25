@@ -8,27 +8,57 @@
   
   <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <!-- tailwind cdn -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- fontawesome cdn -->
+  <script src="https://kit.fontawesome.com/35b16fa9ce.js" crossorigin="anonymous"></script>
+  <!-- custom css -->
+  <style type="text/tailwindcss">
+    body {
+      @apply text-[18px] font-poppins font-medium text-nuetral-grayish-voilet;
+    }
+    .primary-button {
+      @apply px-8 py-2 font-bold bg-primary-cyan text-white rounded-full;
+    }
   </style>
 </head>
 <body>
-
-  Features
-  Pricing
-  Resources
-
-  Login
-  Sign Up
-
-  More than just shorter links
-
-  Build your brand’s recognition and get detailed insights 
-  on how your links are performing.
-
-  Get Started
+  <nav class="flex flex-row items-center justify-between gap-4 w-full pt-8 pb-4 lg:px-24 px-6">
+    <div class="logo-container w-fit">
+      <img src="./images/logo.svg" alt="Shortly">
+    </div>
+    <div class="flex hidden lg:block flex-row justify-between flex-grow">
+      <div class="flex flex-row gap-4">
+        <a href="#">Features</a>
+        <a href="#">Pricing</a>
+        <a href="#">Resources</a>
+      </div>
+      <div class="flex flex-row gap-4">
+        <button>Login</button>
+        <button>Sign Up</button>
+      </div>
+    </div>
+    <div>
+      <button aria-label="Open Navigation Menu" class="text-2xl">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+  <main>
+    <section class="px-6 lg:px-24 py-4 flex flex-col-reverse lg:flex-row items-center">
+      <div class="text-center lg:text-left">
+        <div class="my-8 lg:my-0">
+          <h1 class="text-4xl font-bold text-primary-voilet">More than just shorter links</h1>
+          <p class="mt-4">Build your brand’s recognition and get detailed insights on how your links are performing.</p>
+        </div>
+        <button class="primary-button">Get Started</button>
+      </div>
+      <div class="mr-[-10rem]">
+        <img src="./images/illustration-working.svg" alt="Illustration of a woman working at a computer">
+      </div>
+    </section>
+  </main>
   
   Shorten a link here...
 
@@ -81,5 +111,25 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ['primary-cyan']: "hsl(180, 66%, 49%)",
+            ['primary-voilet']: "hsl(257, 27%, 26%)",
+            ['secondary-red']: "hsl(0, 87%, 67%)",
+            ['nuetral-gray']: "hsl(0, 0%, 75%)",
+            ['nuetral-grayish-voilet']: "hsl(257, 7%, 63%)",
+            ['nuetral-dark-blue']: "hsl(255, 11%, 22%)",
+            ['nuetral-dark-voilet']: "hsl(260, 8%, 14%)",
+          },
+          fontFamily: {
+            'poppins': ['Poppins'],
+          }
+        }
+      }
+    }
+  </script>
 </body>
 </html>
