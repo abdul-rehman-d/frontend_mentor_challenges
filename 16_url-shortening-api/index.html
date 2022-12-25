@@ -28,7 +28,7 @@
     <div class="logo-container w-fit">
       <img src="./images/logo.svg" alt="Shortly">
     </div>
-    <div class="flex hidden lg:block flex-row justify-between flex-grow">
+    <div class="hidden lg:flex flex-row justify-between flex-grow">
       <div class="flex flex-row gap-4">
         <a href="#">Features</a>
         <a href="#">Pricing</a>
@@ -36,25 +36,25 @@
       </div>
       <div class="flex flex-row gap-4">
         <button>Login</button>
-        <button>Sign Up</button>
+        <button class="primary-button">Sign Up</button>
       </div>
     </div>
-    <div>
+    <div class="lg:hidden">
       <button aria-label="Open Navigation Menu" class="text-2xl">
         <i class="fa-solid fa-bars"></i>
       </button>
     </div>
   </nav>
   <main>
-    <section class="px-6 lg:px-24 py-4 flex flex-col-reverse lg:flex-row items-center">
-      <div class="text-center lg:text-left">
-        <div class="my-8 lg:my-0">
-          <h1 class="text-4xl font-bold text-primary-voilet">More than just shorter links</h1>
+    <section class="px-6 lg:px-24 py-4 flex flex-col-reverse lg:flex-row items-center lg:justify-between overflow-x-hidden">
+      <div class="text-center lg:text-left lg:w-1/2">
+        <div class="my-8">
+          <h1 class="text-4xl lg:text-7xl font-bold text-primary-voilet">More than just shorter links</h1>
           <p class="mt-4">Build your brand’s recognition and get detailed insights on how your links are performing.</p>
         </div>
         <button class="primary-button">Get Started</button>
       </div>
-      <div class="mr-[-10rem]">
+      <div class="mr-[-10rem] lg:w-1/2">
         <img src="./images/illustration-working.svg" alt="Illustration of a woman working at a computer">
       </div>
     </section>
