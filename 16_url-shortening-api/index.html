@@ -19,7 +19,19 @@
       @apply text-[18px] font-poppins font-medium text-nuetral-grayish-voilet;
     }
     .primary-button {
-      @apply px-8 py-2 font-bold bg-primary-cyan text-white rounded-full;
+      @apply px-8 py-2 font-bold bg-primary-cyan text-white;
+    }
+
+    .shorten-box {
+      background-image: url(./images/bg-shorten-mobile.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      @apply bg-primary-voilet;
+    }
+    @media (min-width: 640px) {
+      .shorten-box {
+        background-image: url(./images/bg-shorten-desktop.svg);
+      }
     }
   </style>
 </head>
@@ -36,7 +48,7 @@
       </div>
       <div class="flex flex-row gap-4">
         <button>Login</button>
-        <button class="primary-button">Sign Up</button>
+        <button class="primary-button rounded-full">Sign Up</button>
       </div>
     </div>
     <div class="lg:hidden">
@@ -52,17 +64,25 @@
           <h1 class="text-4xl lg:text-7xl font-bold text-primary-voilet">More than just shorter links</h1>
           <p class="mt-4">Build your brand’s recognition and get detailed insights on how your links are performing.</p>
         </div>
-        <button class="primary-button">Get Started</button>
+        <button class="primary-button rounded-full">Get Started</button>
       </div>
       <div class="mr-[-10rem] lg:w-1/2">
         <img src="./images/illustration-working.svg" alt="Illustration of a woman working at a computer">
       </div>
     </section>
+    <div class="shorten-box p-8 mx-6 lg:mx-24 rounded-lg my-8">
+      <div class="flex flex-col md:flex-row md:gap-8 gap-4">
+        <input
+          class="rounded-lg p-4 md:flex-grow"
+          type="text"
+          name="url"
+          id="url-input"
+          placeholder="Shorten a link here..."
+        >
+        <button class="primary-button rounded-lg md:w-1/5">Shorten It!</button>
+      </div>
+    </div>
   </main>
-  
-  Shorten a link here...
-
-  Shorten It!
 
   Advanced Statistics
 
